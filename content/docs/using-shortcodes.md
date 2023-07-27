@@ -30,3 +30,26 @@ To use a Hugo shortcode within CloudCannon, click the 'Snippet' button in the Co
 You can easily add your own customized shortcodes to Alto.
 
 Follow CloudCannon's instructions on <a target="_blank" rel="noopener" href="https://cloudcannon.com/documentation/articles/editing-with-hugo-shortcodes/">Editing with Hugo Shortcodes</a> to define your paired or unpaired shortcodes with positional or named elements, and make them available to editors.&nbsp;
+
+{{<tree>}}
+package.json
+_includes/
+├─ _layouts/
+│  ├─ default.liquid
+│  └─ page.liquid
+└─ file.liquid
+_site/
+└─ index.html
+{{</tree>}}
+
+{{<diffcode>}}
+```
+js
+new PagefindUI({
+    element: "#search",
++    mergeIndex: [{
++        bundlePath: "https://docs.example.com/_pagefind"
++    }]
+})
+```
+{{</diffcode>}}
