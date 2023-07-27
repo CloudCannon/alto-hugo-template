@@ -440,31 +440,29 @@ _inputs:
 
 _snippets:
   diffcode:
-    snippet: "<comp.CodeBlock>\n```[[lang]][[inner]]```\n</comp.CodeBlock>"
+    snippet: "{{<diffcode>}}\n```[[lang]][[inner]]```\n{{</diffcode>}}"
     params: 
       lang:
         parser: argument
         options:
           editor_key: language
-          allow_leading: true
           forbidden_tokens: ["```"]
-
+          style: 
+            output: inline
+          model:
+            editor_key: language
+            optional: true
       inner:
         parser: content
         options:  
           editor_key: inner_code
-          allow_leading: true
-          raw: true
           style:
+            output: block
             block:
               leading: "\n"
               trailing: "\n"
               indent: ""
     inline: false
-    definitions:
-      shortcode_name: diffcode
-      content_key: inner_code
-      named_args: 
     preview:
       text: Diffcode
       subtext: Difference formatter
@@ -476,6 +474,8 @@ _snippets:
     _inputs:
       inner_code:
         type: code
+      language:
+        type: text
   tree:
     snippet: "{{<tree>}}[[inner]]{{</tree>}}"
     params: 
@@ -483,10 +483,8 @@ _snippets:
         parser: content
         options:  
           editor_key: inner_code
-          allow_leading: true
-          raw: true
-          forbidden_tokens: ["```"]
           style:
+            output: block
             block:
               leading: "\n"
               trailing: "\n"
