@@ -1,0 +1,24 @@
+{{ $footerWidth := (index .Site.Data.footer "footer_width") }}
+<footer style="{{ if eq $footerWidth "contain" }}max-width: 1000px {{ end }}">
+    <span class="editor-link"><a href="cloudcannon:collections/data/footer.yml" data-cms-bind-style="sidebar" class="btn"><strong>&#9998;</strong>Edit Footer</a></span>
+    {{ range site.Data.footer.footer_links }}
+        {{ if .link_title }}
+            {{ if hasPrefix .url_path "http" }}
+                <a href="{{ .url_path }}" target="_self">{{ .link_title }}</a>
+            {{ else }}
+                <a href="/{{ .url_path | urlize }}" target="_self">{{ .link_title }}</a>
+            {{ end }}
+        {{ end }} 
+        {{ if .image_path }}
+            {{ if hasPrefix .url_path "http" }}
+                <a href="{{ .url_path }}" target="_blank">
+                    <img class="cloudcannon" src="{{ .image_path }}" alt="{{ .image_alt_text }}" >
+                </a>
+            {{ else }}
+                <a href="/{{ .url_path | urlize }}" target="_blank">
+                    <img class="cloudcannon" src="{{ .image_path }}" alt="{{ .image_alt_text }}" >
+                </a>
+            {{ end }}
+        {{ end }}
+    {{ end }}
+</footer>

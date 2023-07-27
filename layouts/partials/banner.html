@@ -1,0 +1,23 @@
+{{ with site.Data.banner }}
+{{ if and .enable_banner (.show_until) }}
+<header class="banner" 
+    x-cloak
+    x-data="{
+        hidden: true,
+        show_until: new Date('{{ .show_until }}').getTime(),
+        hide_if: 'banner_{{ .id }}',
+    }"
+    x-show="!hidden"
+    x-init="
+        hidden = localStorage.getItem(hide_if)
+            || ((show_until - Date.now()) < 0)
+            || false;
+    ">
+    <p>{{ .html | safeHTML }}</p>
+    <button @click="
+        localStorage.setItem(hide_if, 'true');
+        hidden = true;
+    ">Close</button>
+</header>
+{{ end }}
+{{ end }}

@@ -1,0 +1,27 @@
+baseURL: /
+languageCode: en-us
+title: Alto Template
+summaryLength: 30
+disableKinds:
+  - taxonomyTerm
+  - taxonomy 
+  - term
+markup:
+  highlight:
+    noClasses: false
+  # ensures html inside markdown is allowed to render
+  goldmark:
+    renderer:
+      unsafe: true
+module:
+  hugoVersion:
+    extended: true
+    min: 0.100.0
+
+  mounts:
+    - source: static
+      target: static
+    - source: layouts
+      target: layouts
+    - source: assets
+      target: assets

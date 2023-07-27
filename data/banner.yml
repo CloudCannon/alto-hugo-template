@@ -1,0 +1,4 @@
+enable_banner: true
+html: <p>This banner is completely optional, and can be shown until a set date!</p>
+id: alto-banner
+show_until: 2023-07-20T07:28:00Z

@@ -1,0 +1,65 @@
+<div class="header" x-data="{ isOpen: false }">
+    <nav class="row"
+         aria-label="Project Navigation">
+        <a class="logo-link" href="/">
+          
+            {{ $logo := site.Data.nav.logo }}
+                {{ if $logo.logo_image  }}
+                    <img class="logo logo-light" src="{{ $logo.logo_image }}" alt="{{ site.Data.meta.project_name }} Logo">
+                    {{ if $logo.logo_image_dark }}
+                        <img class="logo logo-dark" src="{{ $logo.logo_image_dark }}" alt="{{ site.Data.meta.project_name }} Logo">
+                    {{ end }}
+                {{ else }}
+                    <span class="logo-heading">{{if $logo.logo_heading }}{{ $logo.logo_heading }} {{ else }} logo {{end}}</span>
+                {{ end }}
+          
+        </a>
+          <span class="editor-link"><a href="cloudcannon:collections/data/nav.yml" data-cms-bind-style="sidebar" class="btn"><strong>&#9998;</strong>Edit Navigation</a></span>
+      <div class="nav-content">
+            <ul>
+                {{ range site.Data.nav.nav_links }}
+                <li>
+                    {{ if hasPrefix .link_url "http" }}
+                        <a {{if .link_icon_path }} target="_blank" {{else}} target="_self" {{end}} href="{{ .link_url }}">
+                    {{ else }}
+                        <a {{if .link_icon_path }} target="_blank" {{else}} target="_self" {{end}} href="/{{ .link_url | urlize }}">
+                    {{ end }}
+                        {{ with .link_label }}
+                            {{ . }}
+                        {{ end }}
+                        {{ if .link_icon_path}}
+                            <img class="nav-links" src="{{ .link_icon_path }}" alt="{{ site.Data.meta.project_name }} on {{ .link_title }}" width="32" height="32">
+                        {{ end }}
+                    </a>
+                </li>
+            {{ end }}
+            </ul>
+               
+            
+            <div class="dark-mode-toggle">
+                <button id="js-dark-mode" class="theme-btn" aria-label="dark mode toggle" @click="toggleMode()">
+                    {{- $svg := "svg/darklightmode.svg" -}}
+                    {{- if $svg }}
+                        {{- partial $svg . -}}
+                    {{- end }}
+                </button>
+            </div>
+            <div class="ham">
+                <button :aria-expanded="isOpen"
+                        aria-controls="docnav-inner docnav-inner-mobile"
+                        @click="isOpen = !isOpen" x-cloak>
+                    <p>{{ site.Data.nav.side_nav_title }} Menu</p>
+                    <span></span>
+               </button>
+            </div>
+      </div>
+    </nav>
+
+    <nav class="docnav-mob"
+        aria-label="{{ site.Data.nav.side_nav_title }} Navigation"
+        :aria-expanded="isOpen">
+        <div id="docnav-inner-mobile" class="docnav-inner" :hidden="!isOpen" x-cloak>
+            {{ partial "docnav-list.html" . }}
+        </div>
+    </nav>
+</div>

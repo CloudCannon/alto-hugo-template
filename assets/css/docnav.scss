@@ -1,0 +1,73 @@
+.docnav {
+    @media ($break) {
+        display: none;
+    }
+}
+
+.docnav-title {
+    background: none;
+    padding: 0;
+    position: relative;
+    display: block;
+    font-weight: bold;
+    font-size: 16px;
+    font-weight: 700;
+    margin: 0;
+    height: 30px;
+}
+
+.docnav-mob {
+    text-align: right;
+
+    &[aria-expanded="true"] {
+        padding-bottom: 1em;
+        border-bottom: solid 1px;
+        margin-bottom: 1em;
+    }
+}
+
+.docnav-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .docnav-mob & {
+        margin-top: 0;
+    }
+
+    & & {
+        padding-left: 16px;
+
+        .docnav-mob & {
+            padding-left: 0;
+            padding-right: 16px;
+        }
+    }
+
+    .active {
+        position: relative;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: calc(1em / 2);
+            left: -16px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: var(--text);
+        }
+
+        .docnav-mob &::before {
+            left: unset;
+            right: -16px;
+            top: calc(1em / 1.6);
+        }
+    }
+
+    a {
+        color: var(--text);
+    }
+}

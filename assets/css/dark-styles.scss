@@ -1,0 +1,83 @@
+body{
+
+    &.dark{
+        // pagefind
+        --pagefind-ui-primary: var(--text);
+        --pagefind-ui-text: var(--text);
+        --pagefind-ui-background: var(--background);
+        --pagefind-ui-border: var(--background);
+        --pagefind-ui-tag: var(--background);
+
+      
+        h1, h2, h3, h4, h5, h6{
+            color: var(--text)
+        }
+
+        .editor-link {
+
+            .btn {
+                color: #333;
+            }
+        }
+
+        .chroma {
+            background-color: var(--background-body);
+
+            .o {
+                color: var(--text);
+            }
+
+            .nt {
+                color: var(--code-element);
+            }
+
+            .na {
+                color: var(--code-attribute);
+            }
+
+            .s {
+                color: var(--code-params);
+            }
+
+            .kc {
+                color: var(--code-bool);
+            }
+
+            .s2 {
+                color: var(--code-values);
+            }
+
+            .mi {
+                color: var(--highlight);
+            }
+
+           
+        }
+
+
+        [data-add]>span {
+            background-color: var(--diffcode-added);
+        }
+
+        [data-remove]>span {
+            background-color: var(--diffcode-removed);
+        }
+
+        .header>.row .logo-dark {
+            display: block;
+        }
+
+        .header>.row .logo-light {
+            display: none;
+        }
+         
+        .header>.row .nav-links {
+         
+            filter: invert(99%) sepia(1%) saturate(1715%) hue-rotate(198deg) brightness(121%) contrast(100%);
+        }
+    
+    }
+
+    
+    
+}

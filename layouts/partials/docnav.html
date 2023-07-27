@@ -1,0 +1,9 @@
+{{ $page := . }}
+
+<nav class="docnav" aria-label="{{ site.Data.nav.side_nav_title }}">
+    <span class="docnav-title">{{ site.Data.nav.side_nav_title }}</span>
+   </button>
+    <div id="docnav-inner" class="docnav-inner">
+        {{ partial "docnav-list.html" . }}
+    </div>
+</nav>

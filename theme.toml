@@ -1,0 +1,11 @@
+name = "Alto"
+license = "MIT"
+licenselink = ""
+description = "A starter template for Alto"
+homepage = "https://github.com/cloudcannon/"
+tags = []
+features = []
+min_version = "0.41.0"
+
+[author]
+name = "Liam Bigelow"

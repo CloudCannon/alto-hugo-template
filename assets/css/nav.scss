@@ -1,0 +1,190 @@
+.header {
+    &>.row {
+        width: 100%;
+        max-width: 1000px;
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 24px 0;
+        gap: 40px;
+
+        .logo {
+            height: 32px;
+        }
+
+        .logo-dark {
+            display: none;
+        }
+
+        .logo-light {
+            display: block;
+        }
+
+      
+        .logo-heading {
+            font-size: 42px;
+            color: var(--text);
+            padding: 0;
+            margin: 0;
+            font-weight: 700;
+            
+
+        }
+
+        .nav-content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .theme-btn {
+            display: flex;
+            align-items: center;
+        }
+
+   
+          
+
+        .nav-links {
+            height: 24px;
+            filter: invert(0%) sepia(100%) saturate(0%) hue-rotate(21deg) brightness(97%) contrast(103%);
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            flex-direction: row;
+            gap: 20px;
+        }
+
+        a {
+            color: var(--text);
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.9em;
+            
+        }
+
+        .logo-link {
+            text-decoration: none;
+        }
+
+        .theme-btn {
+            margin: 0;
+            padding: 0;
+            background-color: transparent;
+
+            
+            &:is(:focus, :active) {
+                outline: none;
+                box-shadow: none;
+            }
+        }
+
+        .ham {
+            display: none;
+
+            @media ($break) {
+                display: flex;
+                align-items: center;
+            }
+
+            button {
+                --w: 24px;
+                --h: 20px;
+
+                position: relative;
+                background-color: transparent;
+                width: var(--w);
+                height: var(--h);
+                margin: 0;
+                padding: 0;
+
+                &:hover,
+                &:focus,
+                &:active {
+                    background-color: transparent;
+                    box-shadow: none;
+                    transform: unset;
+                }
+
+                p {
+                    position: absolute;
+                    clip: rect(1px, 1px, 1px, 1px);
+                    padding: 0;
+                    margin: 0;
+                    border: 0;
+                    height: 1px;
+                    width: 1px;
+                    overflow: hidden;
+                }
+
+                span,
+                span::before,
+                span::after {
+                    content: "";
+                    display: block;
+                    width: 100%;
+                    height: 4px;
+                    background-color: currentColor;
+                    border-radius: 2px;
+                    transition: all .15s ease;
+                }
+
+                span::before {
+                    position: absolute;
+                    top: 0;
+                }
+
+                span::after {
+                    position: absolute;
+                    bottom: 0;
+                }
+
+                &[aria-expanded="true"] {
+
+                    span,
+                    span::before,
+                    span::after {
+                        transition: translate .2s ease, rotate .2s ease .1s;
+                    }
+
+                    span {
+                        background-color: transparent;
+                        transition: background-color .1s ease .1s;
+                    }
+
+                    span::before {
+                        translate: 0 calc((var(--h) / 2) - 2px);
+                        rotate: -45deg;
+                    }
+
+                    span::after {
+                        translate: 0 calc((var(--h) / -2) + 2px);
+                        rotate: 45deg;
+                    }
+                }
+            }
+        }
+    }
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 40px;
+
+    a {
+        display: flex;
+        align-items: center;
+    }
+
+    .cloudcannon {
+        height: 16px;
+    }
+}

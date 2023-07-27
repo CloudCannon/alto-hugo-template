@@ -1,0 +1,111 @@
+$break: "max-width: 800px";
+
+@import "water";
+@import "code";
+@import "elements";
+@import "nav";
+@import "docnav";
+@import "banner";
+@import "dark-styles";
+
+
+:root {
+    --pagefind-ui-scale: 0.8;
+}
+
+body{
+    background-color: var(--body-bg-color);
+}
+
+
+[x-cloak] {
+    display: none !important;
+}
+
+.search {
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.editor-link {
+    display: none;
+    margin-top: 0;
+   .btn {
+       border: 0;
+       border-radius: 2px;
+       width: 100%;
+       max-width: 500px;
+       box-sizing: border-box;
+       font-size: 2rem;
+       text-decoration: none;
+       padding: 10px 15px;
+       margin: 0;
+       font-size: 18px;
+       cursor: pointer;
+       background-color: #f7e064;
+       color: #333;
+       box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.2);
+
+       &:hover {
+           background-color: #f4d525;
+           color: #333;
+       }
+   }
+
+}
+
+
+.cms-editor-active .editor-link {
+	display: block;
+}
+
+.column {
+    flex: 1;
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    gap: 30px;
+    flex-direction: row;
+    padding-top: 40px;
+
+    @media ($break) {
+        flex-direction: column;
+        padding-top: 20px;
+        gap: 20px;
+    }
+
+    aside {
+        max-width: 250px;
+        min-width: 250px;
+        flex: 1;
+
+        @media ($break) {
+            display: none;
+        }
+    }
+
+    main {
+        padding-left: 30px;
+        flex: 3;
+        overflow: hidden;
+
+        @media ($break) {
+            padding-left: 0;
+            overflow: visible;
+        }
+
+        > :first-child {
+            margin-top: 0;
+        }
+    }
+}
+
+footer {
+    width: 100%;
+    margin: 40px auto;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}

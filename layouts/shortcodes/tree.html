@@ -1,0 +1,45 @@
+{{ $placeholderChar := ">" }}
+{{ with .Get "char" }}
+    {{ $placeholderChar = . }}
+{{ end }}
+
+{{ $inputLines := split .Inner "\n" }}
+{{ $outputLines := slice }}
+
+
+{{ range $lineNumber, $line := $inputLines }}
+    {{ $prevLineChars := split (default (index $inputLines (sub $lineNumber 1)) "") "" }}
+    {{ $nextLineChars := split (default (index $inputLines (add $lineNumber 1)) "") "" }}
+    {{ $currentLineChars := split $line "" }}
+
+
+
+    {{ $thisLine := slice }}
+    {{ range $charNumber, $char := $currentLineChars }}
+        {{ if eq $char $placeholderChar }}
+            
+            {{ $lineAbove := eq (index $prevLineChars $charNumber) $placeholderChar }}
+            {{ $lineBelow := eq (index $nextLineChars $charNumber) $placeholderChar }}
+            {{ $lineRight := eq (index $currentLineChars (add $charNumber 1)) $placeholderChar }}
+            {{ $lineLeft := eq (index $currentLineChars (sub $charNumber 1)) $placeholderChar }}
+
+            {{ $char := "└" }}
+            {{ if $lineLeft }}
+                {{ $char = "─" }}
+            {{ else if and $lineBelow $lineRight }}
+                {{ $char = "├" }}
+            {{ else if and $lineBelow }}
+                {{ $char = "│" }}
+            {{ end }}
+
+            {{ $thisLine = append $char $thisLine }}
+        {{ else }}
+            {{ $thisLine = append $char $thisLine }}
+        {{ end }}
+    {{ end }}
+
+    {{ $outputLines = append (delimit $thisLine "") $outputLines }}
+{{ end }}
+
+{{ $codeBlock := (printf "```text%s\n```" (delimit $outputLines "\n")) }}
+{{ partial "diffcode.html" $codeBlock }}

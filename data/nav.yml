@@ -1,0 +1,8 @@
+side_nav_title: Docs
+nav_links:
+  - link_title: GitHub
+    link_url: https://github.com/cloudcannon/alto-hugo-template
+    link_label: 1.0.0
+    link_icon_path: /images/github.svg
+logo:
+  logo_heading: Alto

@@ -1,0 +1,7 @@
+project_name: Alto — Hugo Documentation theme
+default_og_image: /uploads/alto.png
+favicon:
+  small_icon: /meta/favicon-16x16.png
+  large_icon: /meta/favicon-32x32.png
+  apple_touch_icon: /meta/apple-touch-icon.png
+  shortcut_icon: /meta/favicon.ico

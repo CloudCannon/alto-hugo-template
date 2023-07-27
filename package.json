@@ -1,0 +1,13 @@
+{
+  "name": "alto-hugo-template",
+  "private": true,
+  "dependencies": {
+    "alpinejs": "^3.10.3"
+  },
+
+  "scripts":{
+    "dev": "hugo server -D -p 8080",
+    "dev:pagefind": "npx -y pagefind@latest --source public"
+  }
+  
+}
