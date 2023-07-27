@@ -43,8 +43,7 @@ _site/
 {{</tree>}}
 
 {{<diffcode>}}
-```
-js
+```js
 new PagefindUI({
     element: "#search",
 +    mergeIndex: [{
