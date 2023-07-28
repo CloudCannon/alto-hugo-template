@@ -31,7 +31,7 @@ CloudCannon uses Alto as the documentation site template for our own open-source
 ### Dependencies
 
 - This template expects `alpinejs` to be installed by the site.
-- This template expects [pagefind](https://pagefind.app) to run after a site build.
+- This template expects [Pagefind](https://pagefind.app) to run after a site build.
 
 ### General info
 
