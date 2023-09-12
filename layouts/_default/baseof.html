@@ -33,6 +33,9 @@
 
     <title>{{.Params.title}} | {{ site.Data.meta.project_name }}</title>
 
+    {{ $js := resources.Get "js/site.js" | js.Build }}
+    <script type="text/javascript" src="{{ $js.RelPermalink }}" defer></script>
+
     <style>
         {{ range $theme, $groupedTokens := .Site.Data.theme.colors }}
         body.{{$theme}} {
@@ -74,8 +77,6 @@
         });
     </script>
 
-    {{ $js := resources.Get "js/site.js" | js.Build }}
-    <script type="text/javascript" src="{{ $js.RelPermalink }}" defer></script>
 </body>
 
 </html>
