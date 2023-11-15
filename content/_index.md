@@ -24,7 +24,7 @@ Designed initially for open-source software, Alto has many built-in features to 
 
 To get started with Alto, create a CloudCannon account and check out the [Getting Started documentation](/docs/).
 
-{{< tweet user="Example tweet" id="463440424141459456" >}}
+{{< tweet user="Interior" id="463440424141459456" >}}
 
 <!--more-->
 
