@@ -417,23 +417,6 @@ _inputs:
   shortcut_icon:
     type: image
     comment: Bookmark icon
-  enable_banner:
-    type: switch
-  html:
-    type: html
-    label: Banner Content
-    hidden: '!enable_banner'
-  id:
-    type: text
-    label: Unique ID
-    hidden: '!enable_banner'
-    comment: Prevents repeated display for users who close the banner, changing ID resets for all.
-  show_until:
-    type: date
-    comment: Date to stop showing the banner
-    hidden: '!enable_banner'
-
-
   
 
 # Snippets
