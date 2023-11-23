@@ -8,7 +8,7 @@ SEO_options:
   description:
 draft: false
 ---
-Alto is a minimal and modern Hugo theme for static documentation sites, created by and optimized for <a target="_blank" rel="noopener" href="https://cloudcannon.com">CloudCannon</a>.
+Alto is a minimal and modern Hugo theme for static documentation sites, created by and optimized for <a target="_blank" rel="noopener" href="https://cloudcannon.com">CloudCannon</a>.{{< ref path="home" lang="html" outputFormat="html" >}}
 
 Designed initially for open-source software, Alto has many built-in features to aid both site users and documentation writers:
 
