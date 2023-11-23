@@ -10,7 +10,7 @@ collections_config:
     parse_branch_index: true
     disable_add_folder: true
     path: content
-    base_url: /
+    base_url: https://aware-daffodil.cloudvent.net
     icon: feed
     schemas:
       default:
