@@ -12,7 +12,7 @@ Alto is a minimal and modern Hugo theme for static documentation sites, created 
 
 {{< figure src="/uploads/alto.png" >}}
 
-{{< ref path="_index.md" >}}
+{{< ref path="docs" >}}
 
 {{< relref path="_index.md" >}}
 
