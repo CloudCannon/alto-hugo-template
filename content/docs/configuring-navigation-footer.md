@@ -8,7 +8,7 @@ draft: false
 ---
 You can easily configure Alto's Navigation and Footer items within CloudCannon, under Alto's **Site Settings**.&nbsp;
 
-{{< relref path="content/index.md" >}}
+{{< relref path="/_index.md" >}}
 
 Configuring the navigation
 
