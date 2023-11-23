@@ -8,9 +8,9 @@ draft: false
 ---
 You can easily configure Alto's Navigation and Footer items within CloudCannon, under Alto's **Site Settings**.&nbsp;
 
-{{< ref path="configuring-navigation-footer.md" >}}
+{{< ref path="configuring-theme-colors.md" >}}
 
-{{< relref path="configuring-navigation-footer.md" >}}
+{{< relref path="configuring-theme-colors.md" >}}
 
 ## Configuring the navigation
 
