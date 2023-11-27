@@ -12,12 +12,6 @@ Alto is a minimal and modern Hugo theme for static documentation sites, created 
 
 
 
-
-
-{{< ref path="https://aware-daffodil.cloudvent.net/docs" >}}
-
-{{< relref path="https://aware-daffodil.cloudvent.net/docs" >}}
-
 Designed initially for open-source software, Alto has many built-in features to aid both site users and documentation writers:
 
 * Built-in static search with <a target="_blank" rel="noopener" href="https://pagefind.app">Pagefind</a>;
