@@ -31,6 +31,8 @@
     {{ $style := resources.Get "css/site.scss" | toCSS | minify | fingerprint }}
     <link rel="stylesheet" href="{{ $style.Permalink }}">
 
+    {{ partial "extra_head.html" . }}
+
     <title>{{.Params.title}} | {{ site.Data.meta.project_name }}</title>
 
     <style>
@@ -70,7 +72,7 @@
 
     <script>
         window.addEventListener('DOMContentLoaded', (event) => {
-            new PagefindUI({ element: "#search" });
+            new PagefindUI({ element: "#search", showSubResults: true, showImages: false });
         });
     </script>
 
