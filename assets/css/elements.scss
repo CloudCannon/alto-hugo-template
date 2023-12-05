@@ -49,21 +49,46 @@ pre>code {
 }
 
 // Styles for our diffcode shortcode
-[data-add] {
+[data-add], [data-remove] {
     position: relative;
 
     &::before {
-        content: "+";
         position: absolute;
         right: calc(100% + 3px);
-        color: #6ac86aa6;
         font-weight: bold;
         pointer-events: none;
         user-select: none;
+        filter: brightness(0.7) saturate(2);
+
+        body.dark & {
+            filter: brightness(2) saturate(2);
+        }
+    }
+}
+
+[data-add] {
+    &::before {
+        content: "+";
+        color: var(--diffcode-added);
     }
 
     &>span {
-        background-color: #ddffddcf;
+        background-color: var(--diffcode-added);
+    }
+}
+[data-remove] {
+    &::before {
+        content: "-";
+        color: var(--diffcode-removed);
+    }
+
+    &>span {
+        background-color: var(--diffcode-removed);
+    }
+}
+[data-highlight] {
+    &>span {
+        background-color: var(--diffcode-highlighted);
     }
 }
 

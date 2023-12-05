@@ -390,6 +390,12 @@ _inputs:
       format: hex
       alpha: true
     comment: Background color for removed lines in diffcode shortcode.
+  diffcode-highlighted: 
+    type: color
+    options:
+      format: hex
+      alpha: true
+    comment: Background color for highlighted lines in diffcode shortcode.
   pagefind-ui-primary:
     type: color
     comment: Primary color for pagefind ui. 
