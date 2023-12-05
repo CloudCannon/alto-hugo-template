@@ -20,49 +20,6 @@ body{
             }
         }
 
-        .chroma {
-            background-color: var(--background-body);
-
-            .o {
-                color: var(--text);
-            }
-
-            .nt {
-                color: var(--code-element);
-            }
-
-            .na {
-                color: var(--code-attribute);
-            }
-
-            .s {
-                color: var(--code-params);
-            }
-
-            .kc {
-                color: var(--code-bool);
-            }
-
-            .s2 {
-                color: var(--code-values);
-            }
-
-            .mi {
-                color: var(--highlight);
-            }
-
-           
-        }
-
-
-        [data-add]>span {
-            background-color: var(--diffcode-added);
-        }
-
-        [data-remove]>span {
-            background-color: var(--diffcode-removed);
-        }
-
         .header>.row .logo-dark {
             display: block;
         }
