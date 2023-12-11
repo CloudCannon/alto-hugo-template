@@ -12,11 +12,11 @@
         {{ if .image_path }}
             {{ if hasPrefix .url_path "http" }}
                 <a href="{{ .url_path }}" target="_blank">
-                    <img class="cloudcannon" src="{{ .image_path }}" alt="{{ .image_alt_text }}" >
+                    <img class="cloudcannon" src="{{ .image_path }}" alt="{{ .image_alt_text }}" loading="lazy" decoding="async" >
                 </a>
             {{ else }}
                 <a href="/{{ .url_path | urlize }}" target="_blank">
-                    <img class="cloudcannon" src="{{ .image_path }}" alt="{{ .image_alt_text }}" >
+                    <img class="cloudcannon" src="{{ .image_path }}" alt="{{ .image_alt_text }}" loading="lazy" decoding="async" >
                 </a>
             {{ end }}
         {{ end }}
