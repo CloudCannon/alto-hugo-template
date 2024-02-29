@@ -2,6 +2,7 @@
 
 Alto is a minimal and modern Hugo template for static documentation sites, created by and optimized for [CloudCannon](https://cloudcannon.com). Browse through a [live demo](https://holy-ball.cloudvent.net/).
  
+[![Deploy to CloudCannon](https://buttons.cloudcannon.com/deploy.svg)](https://app.cloudcannon.com/register#sites/connect/github/CloudCannon/alto-hugo-template)
 
 Designed initially for open-source software, Alto has many built-in features to aid both site users and documentation writers:
 
