@@ -5,9 +5,9 @@
           
             {{ $logo := site.Data.nav.logo }}
                 {{ if $logo.logo_image  }}
-                    <img class="logo logo-light" src="{{ $logo.logo_image }}" alt="{{ site.Data.meta.project_name }} Logo">
+                    <img class="logo logo-light" src="{{ $logo.logo_image }}" alt="{{ site.Data.meta.project_name }} Logo" decoding="async">
                     {{ if $logo.logo_image_dark }}
-                        <img class="logo logo-dark" src="{{ $logo.logo_image_dark }}" alt="{{ site.Data.meta.project_name }} Logo">
+                        <img class="logo logo-dark" src="{{ $logo.logo_image_dark }}" alt="{{ site.Data.meta.project_name }} Logo" decoding="async">
                     {{ end }}
                 {{ else }}
                     <span class="logo-heading">{{if $logo.logo_heading }}{{ $logo.logo_heading }} {{ else }} logo {{end}}</span>
@@ -28,7 +28,7 @@
                             {{ . }}
                         {{ end }}
                         {{ if .link_icon_path}}
-                            <img class="nav-links" src="{{ .link_icon_path }}" alt="{{ site.Data.meta.project_name }} on {{ .link_title }}" width="32" height="32">
+                            <img class="nav-links" src="{{ .link_icon_path }}" alt="{{ site.Data.meta.project_name }} on {{ .link_title }}" width="32" height="32" decoding="async">
                         {{ end }}
                     </a>
                 </li>
