@@ -6,7 +6,6 @@
 # CloudCannon configuration specific to those collections.
 collections_config:
   pages:
-    output: true
     parse_branch_index: true
     disable_add_folder: true
     path: content
@@ -23,39 +22,32 @@ collections_config:
     _enabled_editors:
       - content
       - visual
-    filter: 
-      base: strict
   Navigation:
-    output: true
     path: data
+    glob:
+      - 'nav.yml'
+      - 'footer.yml'
     disable_add: true
     disable_add_folder: true
+    disable_url: true
     icon: table_rows
-    filter:
-       base: none
-       include: 
-        - nav.yml
-        - footer.yml
   Theme_Palette:
-    output: true
     path: data
+    glob:
+      - 'theme.yml'
     disable_add: true
     disable_add_folder: true
+    disable_url: true
     icon: color_lens
-    filter:
-       base: none
-       include: 
-        - theme.yml
   banner:
-    output: true
     path: data
+    glob:
+      - 'banner.yml'
     disable_add: true
     disable_add_folder: true
+    disable_url: true
+    icon: table_rows
     icon: add_alert
-    filter:
-       base: none
-       include: 
-        - banner.yml
     preview:
       gallery:
         icon: add_alert
@@ -95,20 +87,17 @@ collections_config:
           text: 
             - key: weight
 
-    output: true
-  Meta_Data:
+  Metadata:
     output: false
     path: data
+    glob:
+      - '!theme.yml'
+      - '!nav.yml'
+      - '!footer.yml'
+      - '!banner.yml'
     icon: settings
     disable_add: true
     disable_add_folder: true
-    filter: 
-      exclude:
-        - theme.yml
-        - nav.yml
-        - footer.yml
-        - banner.yml
-      
       
 
 # Control which collections are displayed in the CloudCannon site navigation,
@@ -122,7 +111,7 @@ collection_groups:
       - docs
   - heading: Site Settings
     collections:
-      - Meta_Data
+      - Metadata
       - Theme_Palette
       - Navigation
       - banner
