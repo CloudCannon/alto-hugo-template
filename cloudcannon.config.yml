@@ -418,7 +418,9 @@ _inputs:
   
 
 # Snippets
-
+_snippets_imports:
+  hugo: true
+  
 _snippets:
   diffcode:
     snippet: "{{<diffcode>}}\n```[[lang]][[inner]]```\n{{</diffcode>}}"
