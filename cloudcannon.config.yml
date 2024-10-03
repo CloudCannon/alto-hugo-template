@@ -504,10 +504,6 @@ source:
 # The locations of various types of files within your site.
 # Each path is relative to your site's source folder.
 paths:
-  data: data
-  collections: content
-  includes: layouts
-  layouts: layouts
   static: static
   uploads: static/uploads
 
