@@ -6,10 +6,10 @@
 # CloudCannon configuration specific to those collections.
 collections_config:
   pages:
-    output: true
-    parse_branch_index: true
     disable_add_folder: true
     path: content
+    glob:
+      - '!docs/_index.md'
     base_url: /
     icon: feed
     schemas:
@@ -23,49 +23,14 @@ collections_config:
     _enabled_editors:
       - content
       - visual
-    filter: 
-      base: strict
-  Navigation:
-    output: true
+
+  data:
+    disable_url: true
     path: data
+    icon: settings
     disable_add: true
     disable_add_folder: true
-    icon: table_rows
-    filter:
-       base: none
-       include: 
-        - nav.yml
-        - footer.yml
-  Theme_Palette:
-    output: true
-    path: data
-    disable_add: true
-    disable_add_folder: true
-    icon: color_lens
-    filter:
-       base: none
-       include: 
-        - theme.yml
-  banner:
-    output: true
-    path: data
-    disable_add: true
-    disable_add_folder: true
-    icon: add_alert
-    filter:
-       base: none
-       include: 
-        - banner.yml
-    preview:
-      gallery:
-        icon: add_alert
-      metadata:
-        - icon: date_range
-          text: 
-            - key: show_until
-        - icon: add_alert
-          text: 
-            - key: enable_banner
+    
   docs:
     path: content/docs
     base_url: /docs
@@ -85,7 +50,6 @@ collections_config:
     _enabled_editors:
       - content
       - visual
-    parse_branch_index: true
     preview:
       metadata: 
         - icon: folder
@@ -94,21 +58,6 @@ collections_config:
         - icon: format_list_numbered
           text: 
             - key: weight
-
-    output: true
-  Meta_Data:
-    output: false
-    path: data
-    icon: settings
-    disable_add: true
-    disable_add_folder: true
-    filter: 
-      exclude:
-        - theme.yml
-        - nav.yml
-        - footer.yml
-        - banner.yml
-      
       
 
 # Control which collections are displayed in the CloudCannon site navigation,
@@ -122,10 +71,7 @@ collection_groups:
       - docs
   - heading: Site Settings
     collections:
-      - Meta_Data
-      - Theme_Palette
-      - Navigation
-      - banner
+      - data
 
 # Structures
 
@@ -429,7 +375,9 @@ _inputs:
   
 
 # Snippets
-
+_snippets_imports:
+  hugo: true
+  
 _snippets:
   diffcode:
     snippet: "{{<diffcode>}}\n```[[lang]][[inner]]```\n{{</diffcode>}}"
@@ -513,10 +461,6 @@ source:
 # The locations of various types of files within your site.
 # Each path is relative to your site's source folder.
 paths:
-  data: data
-  collections: content
-  includes: layouts
-  layouts: layouts
   static: static
   uploads: static/uploads
 

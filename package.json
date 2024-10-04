@@ -7,7 +7,8 @@
 
   "scripts":{
     "dev": "hugo server -D -p 8080",
-    "dev:pagefind": "npx -y pagefind@latest --source public"
+    "dev:pagefind": "npx -y pagefind@latest --source public",
+    "build": "hugo --source ./ --destination public --baseURL /"
   }
   
 }
