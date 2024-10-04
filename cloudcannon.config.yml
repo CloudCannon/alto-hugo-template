@@ -23,41 +23,14 @@ collections_config:
     _enabled_editors:
       - content
       - visual
-  Navigation:
+
+  data:
+    output: false
     path: data
-    glob:
-      - 'nav.yml'
-      - 'footer.yml'
+    icon: settings
     disable_add: true
     disable_add_folder: true
-    disable_url: true
-    icon: table_rows
-  Theme_Palette:
-    path: data
-    glob:
-      - 'theme.yml'
-    disable_add: true
-    disable_add_folder: true
-    disable_url: true
-    icon: color_lens
-  banner:
-    path: data
-    glob:
-      - 'banner.yml'
-    disable_add: true
-    disable_add_folder: true
-    disable_url: true
-    icon: add_alert
-    preview:
-      gallery:
-        icon: add_alert
-      metadata:
-        - icon: date_range
-          text: 
-            - key: show_until
-        - icon: add_alert
-          text: 
-            - key: enable_banner
+    
   docs:
     path: content/docs
     base_url: /docs
@@ -85,18 +58,6 @@ collections_config:
         - icon: format_list_numbered
           text: 
             - key: weight
-
-  Metadata:
-    output: false
-    path: data
-    glob:
-      - '!theme.yml'
-      - '!nav.yml'
-      - '!footer.yml'
-      - '!banner.yml'
-    icon: settings
-    disable_add: true
-    disable_add_folder: true
       
 
 # Control which collections are displayed in the CloudCannon site navigation,
@@ -110,10 +71,7 @@ collection_groups:
       - docs
   - heading: Site Settings
     collections:
-      - Metadata
-      - Theme_Palette
-      - Navigation
-      - banner
+      - data
 
 # Structures
 
