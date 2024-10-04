@@ -47,7 +47,6 @@ collections_config:
     disable_add: true
     disable_add_folder: true
     disable_url: true
-    icon: table_rows
     icon: add_alert
     preview:
       gallery:
