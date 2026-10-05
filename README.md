@@ -22,7 +22,6 @@ Designed initially for open-source software, Alto has many built-in features to 
 
 CloudCannon uses Alto as the documentation site template for our own open-source tools. Take a look at these sample sites to see what's possible with static documentation on Alto:
 
-- [Pagefind](https://pagefind.app/)
 - [Rosey](https://rosey.app/)
 - [Reseed](https://reseed.app/)
 
